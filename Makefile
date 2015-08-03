@@ -2,6 +2,7 @@ NPM = npm
 BROWSERIFY = browserify
 GLOBAL_FLAGS = -x jquery -e
 OUTPUT_DIR = .
+DEPLOY_DIR = /Users/cody/Desktop/Tabeeb/Tabeeb.Web.Site/app/tabeebConnect
 DEPLOY_DIR = libs
 
 all: compile deploy clean

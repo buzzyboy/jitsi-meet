@@ -4,7 +4,6 @@
 var APP =
 {
     init: function () {
-        //this.UI = require("./modules/ConnectUI/UI");
         this.UI = require("./modules/UI/UI");
         this.API = require("./modules/API/API");
         this.connectionquality = require("./modules/connectionquality/connectionquality");
@@ -32,7 +31,6 @@ function init() {
 }
 
 
-//$(document).on('tabeebConnect.connect', function (event) {
 $(document).ready(function () {
     var URLPRocessor = require("./modules/URLProcessor/URLProcessor");
     URLPRocessor.setConfigParametersFromUrl();
@@ -44,13 +42,9 @@ $(document).ready(function () {
         APP.API.init();
 
     APP.UI.start(init);
-
-    // We add this callback to let whatever is triggering the tabeebConnect.connect event know that it is ready.
-    event.callback();
 });
 
-$(window).bind('tabeebConnect.disconnect', function () {
-//$(window).bind('beforeunload', function () {
+$(window).bind('beforeunload', function () {
     if(APP.API.isEnabled())
         APP.API.dispose();
 });

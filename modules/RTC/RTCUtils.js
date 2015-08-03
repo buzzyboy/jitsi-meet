@@ -146,7 +146,7 @@ function RTCUtils(RTCService, onTemasysPluginReady)
     this.service = RTCService;
     if (RTCBrowserType.isFirefox()) {
         var FFversion = RTCBrowserType.getFirefoxVersion();
-        if (FFversion >= 40 && config.useBundle && config.useRtcpMux) {
+        if (/* FFversion >= 40 && */config.useBundle && config.useRtcpMux) {
             this.peerconnection = mozRTCPeerConnection;
             this.getUserMedia = navigator.mozGetUserMedia.bind(navigator);
             this.pc_constraints = {};
